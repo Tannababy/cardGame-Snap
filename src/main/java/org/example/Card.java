@@ -11,6 +11,10 @@ public class Card {
         this.value = symbol.getValue();
     }
 
+    public int getValue() {
+        return value;
+    }
+
     public String toString() {
         return "["+ symbol + " of " + suit + " " + "(" + value + ")" + "]" + "\n";
     }
