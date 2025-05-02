@@ -15,6 +15,10 @@ public class Card {
         return value;
     }
 
+    public String getSuit() {
+        return suit;
+    }
+
     public String toString() {
         return "["+ symbol + " of " + suit + " " + "(" + value + ")" + "]" + "\n";
     }

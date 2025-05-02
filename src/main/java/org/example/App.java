@@ -10,5 +10,6 @@ public class App {
         System.out.println(newCardGame.shuffleDeck(newCardGame.getDeck()));
         System.out.println(newCardGame.dealCard());
         System.out.println(newCardGame.sortDeckInNumberOrder());
+        System.out.println(newCardGame.sortDeckIntoSuits());
     }
 }

@@ -37,6 +37,12 @@ public class CardGame {
             return deckOfCards;
         }
 
+        // Sorts the deck into suits (2,3,4,5,6,7,8,9,10,J,Q,K,A of hearts, then 2,3,4,5,6,7,8,9,10,J,Q,K,A of clubs etc.) and stores the new shuffled deck back into the deckOfCards attribute.
+        public ArrayList<Card> sortDeckIntoSuits() {
+            Collections.sort(deckOfCards, Comparator.comparing(card -> card.getSuit()));
+            return deckOfCards;
+        }
+
 //      Shuffles the deck into a random order and stores the new shuffled deck back into the deckOfCards attribute.
         public ArrayList<Card> shuffleDeck(ArrayList<Card> deckOfCards) {
             Collections.shuffle(deckOfCards);
