@@ -15,8 +15,8 @@ public enum CardValue {
     QUEEN(12, "Q"),
     KING(13, "K");
 
-    private int value;
-    private String symbol;
+    private final int value;
+    private final String symbol;
 
     private CardValue(int value, String symbol) {
         this.value = value;
