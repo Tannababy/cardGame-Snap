@@ -28,7 +28,9 @@ public class CardGame {
 
         // Takes the card from the top of the deck and returns it.
         public Card dealCard() {
-            return deckOfCards.getFirst();
+            Card cardOnTopOfDeck = deckOfCards.getFirst();
+            deckOfCards.remove(cardOnTopOfDeck);
+            return cardOnTopOfDeck;
         }
 
         // Sorts the deck in number order (e.g. 2222333344445555...) and stores the new shuffled deck back into the deckOfCards attribute.
