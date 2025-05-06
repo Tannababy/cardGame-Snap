@@ -13,12 +13,12 @@ public class App {
 //        System.out.println(newCardGame.sortDeckIntoSuits());
 
         Snap snapGame = new Snap();
-        System.out.println(snapGame.getDeck());
-        System.out.println();
-        System.out.println(snapGame.getDeck().size());
-        System.out.println();
+//        System.out.println(snapGame.getDeck());
+//        System.out.println();
+//        System.out.println(snapGame.getDeck().size());
+//        System.out.println();
         System.out.println(snapGame.startGame());
-        System.out.println(snapGame.getDeck().size());
+//        System.out.println(snapGame.getDeck().size());
 
     }
 }
