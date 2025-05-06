@@ -18,7 +18,7 @@ public class App {
 //        System.out.println(snapGame.getDeck().size());
 //        System.out.println();
         System.out.println(snapGame.startGame());
-//        System.out.println(snapGame.getDeck().size());
+//
 
     }
 }

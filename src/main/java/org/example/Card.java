@@ -20,6 +20,6 @@ public class Card {
     }
 
     public String toString() {
-        return "["+ symbol + " of " + suit + " " + "(" + value + ")" + "]" + "\n";
+        return "["+ symbol + " of " + suit + "]" + "\n";
     }
 }
