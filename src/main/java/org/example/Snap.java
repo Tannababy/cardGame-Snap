@@ -44,26 +44,22 @@ public class Snap extends CardGame {
 
                     boolean snapDetected = false;
 
-                    Player[] players = {playerOne, playerTwo};
-
-                    for (Player player : players) {
-                        System.out.println(player.getName() + ", type 'snap' within 2 seconds!");
+                        System.out.println(currentPlayer.getName() + ", type 'snap' within 2 seconds!");
 
                         long startTime = System.currentTimeMillis();
                         String input = scanner.nextLine();
                         long endTime = System.currentTimeMillis() - startTime;
 
                         if (endTime > 2000) {
-                            System.out.println("Too slow! That was " + endTime/1000 + "seconds.");
+                            System.out.println("Too slow! That was " + endTime/1000 + " seconds.");
 
                         } else if (input.equalsIgnoreCase("snap")) { // detects player inputted "snap"
 
-                            return player.getName() + " wins with a quick SNAP!";
+                            return currentPlayer.getName() + " wins with a quick SNAP!";
 
                         } else {
                             System.out.println("Incorrect input.");
                         }
-                    }
                 }
             }
 
