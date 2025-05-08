@@ -37,7 +37,33 @@ public class Snap extends CardGame {
 
                // To check if newCard has the same symbol as the last card that was dealt
                 if (newCard.getValue() == previousCard.getValue()) {
-                    return currentPlayer.getName() + " has Won!!";
+                    // Snap Detected
+                    System.out.println("!!! SNAP DETECTED !!!");
+                    System.out.println("Each player has 2 seconds to type 'snap'!");
+
+
+                    boolean snapDetected = false;
+
+                    Player[] players = {playerOne, playerTwo};
+
+                    for (Player player : players) {
+                        System.out.println(player.getName() + ", type 'snap' within 2 seconds!");
+
+                        long startTime = System.currentTimeMillis();
+                        String input = scanner.nextLine();
+                        long endTime = System.currentTimeMillis() - startTime;
+
+                        if (endTime > 2000) {
+                            System.out.println("Too slow! That was " + endTime/1000 + "seconds.");
+
+                        } else if (input.equalsIgnoreCase("snap")) { // detects player inputted "snap"
+
+                            return player.getName() + " wins with a quick SNAP!";
+
+                        } else {
+                            System.out.println("Incorrect input.");
+                        }
+                    }
                 }
             }
 
