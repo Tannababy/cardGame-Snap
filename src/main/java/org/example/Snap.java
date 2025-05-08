@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Snap extends CardGame {
 
     private Player currentPlayer;
-    private Player player0ne;
-    private Player playerTwo;
+    private Player player0ne = new Player("PlayerOne");
+    private Player playerTwo = new Player("PlayerTwo");
 
     public Snap() {
     }
@@ -22,17 +22,31 @@ public class Snap extends CardGame {
 
         List<Card> dealtCardsList = new ArrayList<>();
 
+        currentPlayer = player0ne;
+
         while(!deckOfCards.isEmpty()){
+
             scanner.nextLine();
+
             Card newCard = dealCard();
             System.out.println(newCard);
 
-            //The game continues until two cards in a row have the same symbol, at which point the “player” wins and the game ends.
+            // To only allow comparison of card symbols from the 2nd turn
            if(!dealtCardsList.isEmpty()) {
+
+               // To check if newCard has the same symbol as the last card that was dealt
                 if (newCard.getValue() == dealtCardsList.getLast().getValue()) {
                     return "Player has Won";
                 }
             }
+
+           System.out.println(currentPlayer.getName());
+
+           if (currentPlayer == player0ne) {
+               currentPlayer = playerTwo;
+           } else {
+               currentPlayer = player0ne;
+           }
 
             dealtCardsList.add(newCard);
 
