@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class Snap extends CardGame {
 
+    private Player currentPlayer;
+    private Player player0ne;
+    private Player playerTwo;
+
     public Snap() {
     }
 
