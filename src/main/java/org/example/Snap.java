@@ -6,9 +6,8 @@ import java.util.Scanner;
 
 public class Snap extends CardGame {
 
-    private Player currentPlayer;
-    private Player player0ne = new Player("PlayerOne");
-    private Player playerTwo = new Player("PlayerTwo");
+    private final Player playerOne = new Player("PlayerOne");
+    private final Player playerTwo = new Player("PlayerTwo");
 
     public Snap() {
     }
@@ -16,44 +15,45 @@ public class Snap extends CardGame {
     Scanner scanner = new Scanner(System.in);
 
     public String startGame() {
-        System.out.println("Press enter to start the game: ");
+        System.out.println("---- Welcome to Snap!! ----");
+        System.out.println("Press enter to start the game.");
 
         shuffleDeck(deckOfCards);
 
-        List<Card> dealtCardsList = new ArrayList<>();
+        Card previousCard = null;
 
-        currentPlayer = player0ne;
+        Player currentPlayer = playerOne;
 
         while(!deckOfCards.isEmpty()){
 
             scanner.nextLine();
 
             Card newCard = dealCard();
-            System.out.println(newCard);
+            System.out.println("Card dealt: " + newCard);
+            System.out.println("----- End of " + currentPlayer.getName() + "'s Turn -----\n");
 
             // To only allow comparison of card symbols from the 2nd turn
-           if(!dealtCardsList.isEmpty()) {
+           if(previousCard != null) {
 
                // To check if newCard has the same symbol as the last card that was dealt
-                if (newCard.getValue() == dealtCardsList.getLast().getValue()) {
-                    return "Player has Won";
+                if (newCard.getValue() == previousCard.getValue()) {
+                    return currentPlayer.getName() + " has Won!!";
                 }
             }
 
-           System.out.println(currentPlayer.getName());
 
-           if (currentPlayer == player0ne) {
+           if (currentPlayer == playerOne) {
                currentPlayer = playerTwo;
            } else {
-               currentPlayer = player0ne;
+               currentPlayer = playerOne;
            }
 
-            dealtCardsList.add(newCard);
+            previousCard = newCard;
 
-            System.out.println("Press enter for the next turn: ");
+            System.out.println("Press enter " + currentPlayer.getName() + " to deal the next card.");
         }
 
-        return "No winner";
+        return "No winner, the deck ran out of cards! :(";
     }
 
 
