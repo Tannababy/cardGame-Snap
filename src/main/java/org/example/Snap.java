@@ -6,12 +6,13 @@ public class Snap extends CardGame {
     private final Player playerOne = new Player("PlayerOne");
     private final Player playerTwo = new Player("PlayerTwo");
 
+    Scanner scanner = new Scanner(System.in);
+
     public Snap() {
     }
 
-    Scanner scanner = new Scanner(System.in);
-
     public String startGame() {
+
         System.out.println("---- Welcome to Snap!! ----");
         System.out.println("Press enter to start the game.");
 
@@ -29,33 +30,15 @@ public class Snap extends CardGame {
             System.out.println("Card dealt: " + newCard);
             System.out.println("----- End of " + currentPlayer.getName() + "'s Turn -----\n");
 
-            // To only allow comparison of card symbols from the 2nd turn
-           if(previousCard != null) {
+            // To only allow comparison of card symbols from the 2nd turn and their symbols
+           if(previousCard != null && previousCard.getValue() == newCard.getValue()) {
 
-               // To check if newCard has the same symbol as the last card that was dealt
-                if (newCard.getValue() == previousCard.getValue()) {
-                    // Snap Detected
-                    System.out.println("!!! SNAP DETECTED !!!");
-                    System.out.println("Each player has 2 seconds to type 'snap'!");
-
-
-                        System.out.println(currentPlayer.getName() + ", type 'snap' within 2 seconds!");
-
-                        long startTime = System.currentTimeMillis();
-                        String input = scanner.nextLine();
-                        long endTime = System.currentTimeMillis() - startTime;
-
-                        if (endTime > 2000) {
-                            System.out.println("Too slow! That was " + endTime/1000 + " seconds.");
-
-                        } else if (input.equalsIgnoreCase("snap")) { // detects player inputted "snap"
-
-                            return currentPlayer.getName() + " wins with a quick SNAP!";
-
-                        } else {
-                            System.out.println("Incorrect input.");
-                        }
-                }
+               Player winingPlayer = checkForWinner();
+               if(winingPlayer != null) {
+                   System.out.println(winingPlayer.getName() + " won the game with a quick SNAP!");
+               } else {
+                   System.out.println("No one snapped in time, the game continues...");
+               }
             }
 
 
@@ -74,5 +57,32 @@ public class Snap extends CardGame {
     }
 
 
+    private Player checkForWinner() {
 
+        Player[] players = {playerOne, playerTwo};
+
+        System.out.println("!!! SNAP DETECTED !!!");
+        System.out.println("Each player has 2 seconds to type 'snap'!");
+
+        for (Player player : players) { // to switch players if missed snap opportunity
+
+            System.out.println(player.getName() + ", type 'snap' within 2 seconds!");
+
+            long startTime = System.currentTimeMillis();
+            String input = scanner.nextLine();
+            long endTime = System.currentTimeMillis() - startTime;
+
+            if (endTime > 2000) {
+                System.out.println("Too slow! That was " + endTime / 1000 + " seconds.");
+
+            } else if (input.equalsIgnoreCase("snap")) { // detects player inputted "snap"
+
+                return player;
+
+            } else {
+                System.out.println("Incorrect input.");
+            }
+        }
+        return null;
+    }
 }

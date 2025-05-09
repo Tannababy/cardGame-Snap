@@ -5,7 +5,7 @@ A simple two-player console-based version of the classic card game Snap, built i
 When two consecutively dealt cards match in value, players must race to type "snap" within 2 seconds to win. The first player to do so correctly is declared the winner — but hesitate too long, and the chance is lost!
 
 
-## 🧠 Features
+## ✨ Features
 
 - Two-player alternating turns
 
