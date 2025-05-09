@@ -1,7 +1,4 @@
 package org.example;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Snap extends CardGame {
@@ -41,8 +38,6 @@ public class Snap extends CardGame {
                     System.out.println("!!! SNAP DETECTED !!!");
                     System.out.println("Each player has 2 seconds to type 'snap'!");
 
-
-                    boolean snapDetected = false;
 
                         System.out.println(currentPlayer.getName() + ", type 'snap' within 2 seconds!");
 
