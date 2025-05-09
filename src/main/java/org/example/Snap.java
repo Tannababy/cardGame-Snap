@@ -34,8 +34,9 @@ public class Snap extends CardGame {
            if(previousCard != null && previousCard.getValue() == newCard.getValue()) {
 
                Player winingPlayer = checkForWinner();
+
                if(winingPlayer != null) {
-                   System.out.println(winingPlayer.getName() + " won the game with a quick SNAP!");
+                   return winingPlayer.getName() + " won the game with a quick SNAP!";
                } else {
                    System.out.println("No one snapped in time, the game continues...");
                }
