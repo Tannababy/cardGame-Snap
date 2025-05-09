@@ -28,15 +28,15 @@ public class Snap extends CardGame {
 
             Card newCard = dealCard();
             System.out.println("Card dealt: " + newCard);
-            System.out.println("----- End of " + currentPlayer.getName() + "'s Turn -----\n");
+            System.out.println("----- End of " + currentPlayer.name() + "'s Turn -----\n");
 
-            // To only allow comparison of card symbols from the 2nd turn and their symbols
+            // To only allow comparison of card symbols from the 2nd turn by their symbols
            if(previousCard != null && previousCard.getValue() == newCard.getValue()) {
 
                Player winingPlayer = checkForWinner();
 
                if(winingPlayer != null) {
-                   return winingPlayer.getName() + " won the game with a quick SNAP!";
+                   return winingPlayer.name() + " won the game with a quick SNAP!";
                } else {
                    System.out.println("No one snapped in time, the game continues...");
                }
@@ -51,7 +51,7 @@ public class Snap extends CardGame {
 
             previousCard = newCard;
 
-            System.out.println("Press enter " + currentPlayer.getName() + " to deal the next card.");
+            System.out.println("Press enter " + currentPlayer.name() + " to deal the next card.");
         }
 
         return "No winner, the deck ran out of cards! :(";
@@ -67,7 +67,7 @@ public class Snap extends CardGame {
 
         for (Player player : players) { // to switch players if missed snap opportunity
 
-            System.out.println(player.getName() + ", type 'snap' within 2 seconds!");
+            System.out.println(player.name() + ", type 'snap' within 2 seconds!");
 
             long startTime = System.currentTimeMillis();
             String input = scanner.nextLine();

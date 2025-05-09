@@ -46,9 +46,8 @@ public class CardGame {
         }
 
 //      Shuffles the deck into a random order and stores the new shuffled deck back into the deckOfCards attribute.
-        public ArrayList<Card> shuffleDeck(ArrayList<Card> deckOfCards) {
+        public void shuffleDeck(ArrayList<Card> deckOfCards) {
             Collections.shuffle(deckOfCards);
-            return deckOfCards;
         }
 
 }
