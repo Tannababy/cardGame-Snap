@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 import static org.junit.jupiter.api.Assertions.*;
 

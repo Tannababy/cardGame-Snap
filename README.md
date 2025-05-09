@@ -36,8 +36,22 @@ When two consecutively dealt cards match in value, players must race to type "sn
 ## 🚀 How to Run
 
 1. **Clone or download the project**
+   ```bash
+    git clone git@github.com:Tannababy/naughts-crosses-game.git
+    ```
 2. **Open project in IDE. eg. InteliJ IDEA**
-
+3. **Navigate into project directory**
+   ```bash
+    cd cardGame-Snap
+    ```
+4. **Compile the Code:** Use the Java compiler to compile all your `.java` files.
+   ```bash
+    javac -d out $(find src/main/java/snap.cardGame "*.java")
+    ```
+5. **Run game**
+   ```bash
+   java -cp out snap.cardGame.App
+   ```
 
 ## 🙌🏾 Acknowledgments
 

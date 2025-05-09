@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 public class Card {
     private String suit;

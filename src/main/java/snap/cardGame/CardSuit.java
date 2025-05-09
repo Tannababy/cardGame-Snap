@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 public enum CardSuit {
     SPADES("♠"), HEARTS("♥"), DIAMONDS("♦"), CLUBS("♣");

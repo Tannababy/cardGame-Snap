@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 public record Player(String name) {
 }

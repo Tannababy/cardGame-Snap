@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 public enum CardValue {
     ACE(14,"A"),

@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 import java.util.ArrayList;
 import java.util.Collections;

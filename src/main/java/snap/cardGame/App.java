@@ -1,4 +1,4 @@
-package org.example;
+package snap.cardGame;
 
 public class App {
     public static void main(String[] args) {
